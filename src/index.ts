@@ -15,6 +15,15 @@ app.post('/login', (req: Request, res: Response) => {
     res.send('User logged in');
 });
 
+app.post('/products', (req: Request, res: Response) => {
+    const { name, price } = req.body;
+    res.send('Product added');
+});
+
+app.get('/products', (req: Request, res: Response) => {
+    res.send('List of products');
+});
+
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
